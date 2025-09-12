@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Livraria do Bairro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="atomic/organism/footer.css">
+    <link rel="stylesheet" href="atomic/organism/painel-admin.css">
+    <link rel="stylesheet" href="atomic/atoms/button.css">
+    <link rel="stylesheet" href="atomic/molecules/login.css">
+</head>
+<body>
+
+    <div id="login-section" class="login-container">
+        <div class="login-box">
+            <h1>Acesso Administrativo</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <p id="login-error" class="error-message" style="display: none;">Senha incorreta!</p>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-content-section" style="display: none;">
+        <header>
+            <h1>Área Administrativa</h1>
+            <nav>
+                <a href="index.html">Ver Catálogo</a>
+                <button id="logout-button" class="btn btn-danger">Sair</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="admin-section">
+                <h2>Gerenciar Acervo</h2>
+                <form id="book-form">
+                    <input type="hidden" id="book-id">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" id="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Autor</label>
+                        <input type="text" id="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Preço</label>
+                        <input type="number" id="price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">URL da Imagem da Capa</label>
+                        <input type="url" id="imageUrl" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Salvar Livro</button>
+                        <button type="button" id="cancel-edit" class="btn btn-secondary" style="display: none;">Cancelar Edição</button>
+                    </div>
+                </form>
+            </section>
+            <section class="admin-section">
+                <h3>Livros Cadastrados</h3>
+                <div id="admin-book-list"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__top">
+                <div>
+                    <h3 class="footer__title">Livraria do Bairro</h3>
+                    <p class="footer__desc">
+                        O refúgio perfeito para os amantes de livros. Encontre clássicos,
+                        novidades e tesouros escondidos em nossas prateleiras.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer__subtitle">Navegação</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__subtitle">Ajuda</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Suporte</a></li>
+                        <li><a href="#">Política de Trocas</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+               
+                <p class="footer__copy">
+                    &copy; 2025 Livraria do Bairro. Todos os direitos reservados.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
